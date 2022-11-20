@@ -23,4 +23,3 @@ const titleCased = () => {
     return capitalisedString;
   });
 };
-console.log(titleCased());
