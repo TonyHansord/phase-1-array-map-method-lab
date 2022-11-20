@@ -12,26 +12,15 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  const capitalisedTutorials = tutorials.map((tutorial) => {
-    const words = [];
-    let word = "";
-    for (let letter of tutorial) {
-      if (letter !== " ") {
-        word += letter;
-      } else {
-        words.push(word);
-        word = "";
-      }
-    }
-    words.push(word);
-    let capitalisedString = "";
-    for (let indWord of words) {
-      capitalisedString +=
-        indWord.charAt(0).toUpperCase() + indWord.slice(1) + " ";
-    }
-    capitalisedString = capitalisedString.slice(0, -1);
+  return tutorials.map((tutorial) => {
+    const words = tutorial.split(" ");
+
+    const capitalisedWords = words.map(
+      (word) => word.charAt(0).toUpperCase() + word.slice(1)
+    );
+
+    const capitalisedString = capitalisedWords.join(" ");
     return capitalisedString;
   });
-
-  return capitalisedTutorials;
 };
+console.log(titleCased());
